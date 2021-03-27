@@ -58,19 +58,13 @@ class DataParserTest {
                         81,
                         List.of(BigDecimal.valueOf(53.38), BigDecimal.valueOf(88.62), BigDecimal.valueOf(78.48)),
                         List.of(BigDecimal.valueOf(45), BigDecimal.valueOf(98), BigDecimal.valueOf(3)))
-
-
         );
     }
 
     private static Stream<Arguments> provideSomeInvalidData() {
         return Stream.of(
-
                 Arguments.of("81 : (1,153.38,€45) (2,588.62,€98) (3,678.48,€3) "),
-
                 Arguments.of("181 : (1,15.38,€45) ")
-
-
         );
     }
 }
