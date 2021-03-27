@@ -61,24 +61,13 @@ public class DataProviderImpl implements DataProvider {
     private Pack parseLine(String lineData) throws APIException {
         try {
 
-
+            //split capacity and items
             String[] capacityItemArray = lineData.split(":");
             Pack.PackBuilder packBuilder = Pack.builder();
             packBuilder.capacity(Integer.valueOf(capacityItemArray[0].trim()));
 
-
-            //-----------parse items
-
-            List<Item> items = new ArrayList<>();
-            Matcher itemMatcher = itemPattern.matcher(capacityItemArray[1]);
-            while (itemMatcher.find()) {
-                items.add(Item.builder().index(Integer.valueOf(itemMatcher.group(2)))
-                        .weight(new BigDecimal(itemMatcher.group(3)))
-                        .price(new BigDecimal(itemMatcher.group(4)))
-                        .build());
-
-
-            }
+            //parse items
+            List<Item> items = parseItems(capacityItemArray[1]);
 
             packBuilder.possibleItems(items);
             return packBuilder.build();
@@ -88,6 +77,18 @@ public class DataProviderImpl implements DataProvider {
             throw new APIException(ExceptionCodes.FILE_FORMAT_EXP, e);
         }
 
+    }
+
+    private List<Item> parseItems(String input) {
+        List<Item> items = new ArrayList<>();
+        Matcher itemMatcher = itemPattern.matcher(input);
+        while (itemMatcher.find()) {
+            items.add(Item.builder().index(Integer.valueOf(itemMatcher.group(2)))
+                    .weight(new BigDecimal(itemMatcher.group(3)))
+                    .price(new BigDecimal(itemMatcher.group(4)))
+                    .build());
+        }
+        return items;
     }
 
 
