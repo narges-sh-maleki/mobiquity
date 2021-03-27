@@ -13,7 +13,7 @@ public class Packer {
 
   public static String pack(String filePath) throws APIException {
 
-    PackerService packerService = new PackerService(new DataProviderImpl(filePath), new ItemPickerImpl());
+    PackerService packerService = new PackerService(new DataProviderImpl(filePath,new DataParser()), new ItemPickerImpl());
 
     return packerService.pack();
   }

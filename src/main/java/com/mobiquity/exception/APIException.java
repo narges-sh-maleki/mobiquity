@@ -23,4 +23,8 @@ public class APIException extends Exception {
     this.exceptionCode = exceptionCode;
   }
 
+  public APIException(ExceptionCodes exceptionCode,String message){
+    super(exceptionCode.getExceptionMessage()  + " " + message);
+    this.exceptionCode = exceptionCode;
+  }
 }

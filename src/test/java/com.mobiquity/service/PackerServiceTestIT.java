@@ -11,7 +11,8 @@ class PackerServiceTestIT {
     @Test
     void pack() throws APIException {
         //given
-        packerService = new PackerService(new DataProviderImpl("src/main/test/resources/example_input"),
+        String path = DataProviderImplTest.class.getResource("/example_input").getPath();
+        packerService = new PackerService(new DataProviderImpl(path, new DataParser()),
                 new ItemPickerImpl());
         //when
         String result = packerService.pack();

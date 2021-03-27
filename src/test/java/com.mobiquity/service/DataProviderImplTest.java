@@ -17,7 +17,8 @@ class DataProviderImplTest {
 
     @BeforeAll
     static void beforeAll() throws APIException {
-        dataProvider = new DataProviderImpl("src/main/test/resources/example_input");
+        String path = DataProviderImplTest.class.getResource("/example_input").getPath();
+        dataProvider = new DataProviderImpl(path, new DataParser());
     }
 
     @RepeatedTest(4)

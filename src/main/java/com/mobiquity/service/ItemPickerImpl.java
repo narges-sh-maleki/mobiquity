@@ -18,7 +18,6 @@ public  class ItemPickerImpl implements ItemPicker {
 
         for (int i = 1; i <= weight.length; i++) {
 
-
             int itemWeight = weight[i - 1];
             int itemPrice = cost[i - 1];
 
@@ -30,19 +29,16 @@ public  class ItemPickerImpl implements ItemPicker {
                 // Deciding to include or exclude the current item
                 if (sz >= itemWeight && DP[i - 1][sz - itemWeight] + itemPrice > DP[i][sz])
                     DP[i][sz] = DP[i - 1][sz - itemWeight] + itemPrice;
-
             }
         }
 
         int sz = capacity;
         List<Integer> itemsSelected = new ArrayList<>();
 
-        // Using the information inside the table we can backtrack and determine
-        // which items were selected during the dynamic programming phase. The idea
-        // is that if DP[i][sz] != DP[i-1][sz] then the item was selected
+        // checking the matrix to find selected items
+        //  if DP[i][sz] != DP[i-1][sz] then the item was included
         for (int i = weight.length; i > 0; i--) {
             if (DP[i][sz] != DP[i - 1][sz]) {
-
                 itemsSelected.add(i);
                 sz -= weight[i-1];
             }
@@ -51,8 +47,5 @@ public  class ItemPickerImpl implements ItemPicker {
         // Return the items that were selected
         java.util.Collections.reverse(itemsSelected);
         return itemsSelected;
-
-        // Return the maximum profit
-        //return DP[N][capacity];
     }
 }

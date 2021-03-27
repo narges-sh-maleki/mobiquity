@@ -28,9 +28,8 @@ class ItemPickerImplTest {
     private static Stream<Arguments> provideSomeValidData() {
         return Stream.of(
 
-                Arguments.of(8100, new int[]{5338,8862,7848,7230,3018,4634},new int[]{45,98,3,76,9,48}, List.of(4))
-
-
+                Arguments.of(8100, new int[]{5338,8862,7848,7230,3018,4634},new int[]{45,98,3,76,9,48}, List.of(4)),
+                Arguments.of(800, new int[]{1530},new int[]{34}, List.of())
 
         );
     }
