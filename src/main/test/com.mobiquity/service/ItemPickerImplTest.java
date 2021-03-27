@@ -1,7 +1,5 @@
 package com.mobiquity.service;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -10,23 +8,19 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
-class PackProcessorImplTest {
+class ItemPickerImplTest {
 
-    private PackProcessorImpl packProcessor;
+    private ItemPickerImpl packProcessor = new ItemPickerImpl();
 
-    @BeforeEach
-    void setUp() {
-        packProcessor = new PackProcessorImpl();
-    }
+
 
     @ParameterizedTest()
     @MethodSource("provideSomeValidData")
     void fillPackage(Integer capacity,int[] weight, int[] cost,List expectedResult) {
         //given
         //when
-        List<Integer> result = packProcessor.fillPackage(capacity,weight,cost);
+        List<Integer> result = packProcessor.pickItems(capacity,weight,cost);
         //then
         assertThat(result).isEqualTo(expectedResult);
     }

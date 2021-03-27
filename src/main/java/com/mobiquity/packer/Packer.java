@@ -1,17 +1,21 @@
 package com.mobiquity.packer;
 
 import com.mobiquity.exception.APIException;
+import com.mobiquity.service.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Packer {
 
-  private Packer() {
+
+  private Packer(){
+
   }
 
   public static String pack(String filePath) throws APIException {
-    return null;
+
+    PackerService packerService = new PackerService(new DataProviderImpl(filePath), new ItemPickerImpl());
+
+    return packerService.pack();
   }
 
 }

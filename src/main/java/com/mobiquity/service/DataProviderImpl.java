@@ -64,7 +64,7 @@ public class DataProviderImpl implements DataProvider {
 
             String[] capacityItemArray = lineData.split(":");
             Pack.PackBuilder packBuilder = Pack.builder();
-            packBuilder.capacity(new BigDecimal(capacityItemArray[0].trim()));
+            packBuilder.capacity(Integer.valueOf(capacityItemArray[0].trim()));
 
 
             //-----------parse items

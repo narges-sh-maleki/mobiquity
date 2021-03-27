@@ -1,12 +1,11 @@
 package com.mobiquity.service;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public  class PackProcessorImpl implements PackProcessor {
+public  class ItemPickerImpl implements ItemPicker {
     @Override
-    public  List<Integer> fillPackage(Integer capacity, int[] weight, int[] cost) {
+    public  List<Integer> pickItems(Integer capacity, int[] weight, int[] cost) {
         if (weight == null || cost == null || weight.length != cost.length || capacity < 0)
             throw new IllegalArgumentException("Invalid input");
 
