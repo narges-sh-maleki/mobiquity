@@ -1,6 +1,7 @@
 package com.mobiquity.domain;
 
 
+import com.mobiquity.config.ConfigProperties;
 import com.mobiquity.exception.APIException;
 import com.mobiquity.exception.ExceptionCodes;
 import lombok.*;
@@ -16,10 +17,11 @@ public class Pack {
 
     @Builder
     public Pack(@NonNull Integer capacity, @NonNull List<Item> possibleItems) throws APIException {
+        ConfigProperties configProperties = ConfigProperties.getInstance();
         //validate fields
-        if (capacity > 100 )
+        if (capacity > configProperties.getMaxCapacity() )
             throw new APIException(ExceptionCodes.FIELD_FORMAT_EXP , "capacity: " + capacity.toString());
-        if ( possibleItems.size() > 15)
+        if ( possibleItems.size() > configProperties.getMaxItemSize())
             throw new APIException(ExceptionCodes.FIELD_FORMAT_EXP , "item number: " + possibleItems.size());
 
         this.capacity = capacity;

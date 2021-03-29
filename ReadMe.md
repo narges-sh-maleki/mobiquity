@@ -48,11 +48,11 @@ There are two main domain objects (POJOs) designed as immutable objects.
 The validation checks for constrains are done in the constructor of the objects.
 
 #### Repository Objects:</br>
-The DataProvider is used as an abstract to support different Data Sources such as file, DB and so on. 
+The DataProvider is used as an abstract to support different Data Sources such as file, DB, etc. 
 For now, the implementation is based on file data source , but there is possibility to have other implementations 
 to get data from other data sources.
 The same approach is used for DataParser and other classes. For now, it parses the data based on the 
-customized format, but it can change to JSON,CSV,...
+customized format, but it can change to JSON, CSV, etc. Dependency Inversion approach was applied in designing DataProvider as well as DataParser.
 
 ##### Core Algorithm:
 The Knapsack 0/1 with Dynamic Programming algorithm is used to implement ItemPicker interface.
