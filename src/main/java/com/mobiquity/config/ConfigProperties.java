@@ -19,18 +19,22 @@ public class ConfigProperties {
     private final Integer coefficient;
 
     private ConfigProperties() {
-        Integer numberPrecision;
-        Integer coefficient;
+        Integer numberPrecision = Integer.valueOf(DEFAULT_NUMBER_PRECISION);
+        Integer coefficient = Integer.valueOf(DEFAULT_COEFFICIENT);
+
         try {
             Properties appProps = new Properties();
-            appProps.load(new FileInputStream(ConfigProperties.class.getResource("/application.properties").toURI().getPath()));
+            if (ConfigProperties.class.getResource("/affpplication.properties") != null) {
 
-            numberPrecision = Integer.valueOf(appProps.getProperty("NumberPrecision", DEFAULT_NUMBER_PRECISION));
-            coefficient = Integer.valueOf(appProps.getProperty("Coefficient", DEFAULT_COEFFICIENT));
+                appProps.load(new FileInputStream(ConfigProperties.class.getResource("/affpplication.properties").toURI().getPath()));
+
+                numberPrecision = Integer.valueOf(appProps.getProperty("NumberPrecision", DEFAULT_NUMBER_PRECISION));
+                coefficient = Integer.valueOf(appProps.getProperty("Coefficient", DEFAULT_COEFFICIENT));
+            }
+
         } catch (IOException | URISyntaxException e) {
             log.error("Exception reading properties file", e);
-            numberPrecision = Integer.valueOf(DEFAULT_NUMBER_PRECISION);
-            coefficient = Integer.valueOf(DEFAULT_COEFFICIENT);
+
         }
 
         this.numberPrecision = numberPrecision;
