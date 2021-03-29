@@ -1,9 +1,10 @@
 package com.mobiquity.service;
 
 import com.mobiquity.exception.APIException;
+import com.mobiquity.packer.PackerService;
+import com.mobiquity.repository.DataParserImplCustomized;
+import com.mobiquity.repository.DataProviderImplFileReader;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PackerServiceTestIT {
 
@@ -11,9 +12,9 @@ class PackerServiceTestIT {
     @Test
     void pack() throws APIException {
         //given
-        String path = DataProviderImplTest.class.getResource("/example_input").getPath();
-        packerService = new PackerService(new DataProviderImpl(path, new DataParser()),
-                new ItemPickerImpl());
+        String path = DataProviderImplFileReaderTest.class.getResource("/example_input").getPath();
+        packerService = new PackerService(new DataProviderImplFileReader(path, new DataParserImplCustomized()),
+                new ItemPickerImplDP());
         //when
         String result = packerService.pack();
 

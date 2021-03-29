@@ -16,10 +16,12 @@ public class Pack {
 
     @Builder
     public Pack(@NonNull Integer capacity, @NonNull List<Item> possibleItems) throws APIException {
+        //validate fields
         if (capacity > 100 )
             throw new APIException(ExceptionCodes.FIELD_FORMAT_EXP , "capacity: " + capacity.toString());
         if ( possibleItems.size() > 15)
             throw new APIException(ExceptionCodes.FIELD_FORMAT_EXP , "item number: " + possibleItems.size());
+
         this.capacity = capacity;
         this.possibleItems = possibleItems;
     }

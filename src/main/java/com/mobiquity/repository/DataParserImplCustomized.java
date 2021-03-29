@@ -1,4 +1,4 @@
-package com.mobiquity.service;
+package com.mobiquity.repository;
 
 import com.mobiquity.domain.Item;
 import com.mobiquity.domain.Pack;
@@ -13,11 +13,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Slf4j
-public class DataParser {
+public class DataParserImplCustomized implements DataParser {
 
     private static final Pattern itemPattern = Pattern.compile("(\\((\\d+),([0-9]*\\.?[0-9]*),€(\\d+)\\))");
 
-
+    @Override
     public Pack parseLine(String lineData) throws APIException {
         String[] capacityItemArray;
         Pack.PackBuilder packBuilder = Pack.builder();

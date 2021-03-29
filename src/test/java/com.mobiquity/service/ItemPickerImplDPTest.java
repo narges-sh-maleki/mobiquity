@@ -1,5 +1,6 @@
 package com.mobiquity.service;
 
+import com.mobiquity.exception.APIException;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -9,15 +10,15 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-class ItemPickerImplTest {
+class ItemPickerImplDPTest {
 
-    private ItemPickerImpl packProcessor = new ItemPickerImpl();
+    private ItemPickerImplDP packProcessor = new ItemPickerImplDP();
 
 
 
     @ParameterizedTest()
     @MethodSource("provideSomeValidData")
-    void fillPackage(Integer capacity,int[] weight, int[] cost,List expectedResult) {
+    void fillPackage(Integer capacity,int[] weight, int[] cost,List expectedResult) throws APIException {
         //given
         //when
         List<Integer> result = packProcessor.pickItems(capacity,weight,cost);

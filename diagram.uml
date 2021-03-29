@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="1089.0">com.mobiquity.service.ItemPickerImplDP</node>
+    <node x="916.2367231638419" y="1078.0">com.mobiquity.repository.DataProviderImplFileReader</node>
+    <node x="872.836723163842" y="589.0">com.mobiquity.domain.Pack</node>
+    <node x="775.9218724778052" y="326.0">com.mobiquity.domain.Item</node>
+    <node x="509.6500000000001" y="970.0">com.mobiquity.repository.DataProvider</node>
+    <node x="502.75520581113847" y="1218.0">com.mobiquity.packer.Packer</node>
+    <node x="929.7063660209849" y="0.0">com.mobiquity.exception.ExceptionCodes</node>
+    <node x="144.6500000000001" y="970.0">com.mobiquity.service.ItemPicker</node>
+    <node x="393.86172316384193" y="163.0">com.mobiquity.config.ConfigProperties</node>
+    <node x="419.6367231638419" y="1089.0">com.mobiquity.packer.PackerService</node>
+    <node x="914.836723163842" y="197.5">com.mobiquity.exception.APIException</node>
+    <node x="880.2866828087169" y="852.0">com.mobiquity.repository.DataParser</node>
+    <node x="883.6500000000001" y="970.0">com.mobiquity.repository.DataParserImplCustomized</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.mobiquity.repository.DataParserImplCustomized" target="com.mobiquity.repository.DataParser">
+      <point x="-55.80000000000001" y="-29.0" />
+      <point x="967.35" y="950.0" />
+      <point x="977.2866828087169" y="950.0" />
+      <point x="0.0" y="29.0" />
+    </edge>
+    <edge source="com.mobiquity.repository.DataProviderImplFileReader" target="com.mobiquity.exception.APIException">
+      <point x="88.5" y="-40.0" />
+      <point x="1181.7367231638418" y="1058.0" />
+      <point x="1194.2875" y="1058.0" />
+      <point x="1194.2875" y="296.0" />
+      <point x="1062.4367231638419" y="296.0" />
+      <point x="65.59999999999997" y="17.0" />
+    </edge>
+    <edge source="com.mobiquity.domain.Pack" target="com.mobiquity.exception.APIException">
+      <point x="28.375" y="-106.5" />
+      <point x="1014.711723163842" y="564.0" />
+      <point x="996.836723163842" y="564.0" />
+      <point x="0.0" y="17.0" />
+    </edge>
+    <edge source="com.mobiquity.packer.Packer" target="com.mobiquity.service.ItemPickerImplDP">
+      <point x="-68.0" y="-29.0" />
+      <point x="519.7552058111385" y="1198.0" />
+      <point x="161.0" y="1198.0" />
+      <point x="0.0" y="29.0" />
+    </edge>
+    <edge source="com.mobiquity.repository.DataProviderImplFileReader" target="com.mobiquity.repository.DataProvider">
+      <point x="-147.5" y="-40.0" />
+      <point x="945.7367231638419" y="1048.0" />
+      <point x="775.1500000000001" y="1048.0" />
+      <point x="88.5" y="29.0" />
+    </edge>
+    <edge source="com.mobiquity.repository.DataParser" target="com.mobiquity.domain.Pack">
+      <point x="0.0" y="-29.0" />
+      <point x="977.2866828087169" y="832.0" />
+      <point x="986.336723163842" y="832.0" />
+      <point x="0.0" y="106.5" />
+    </edge>
+    <edge source="com.mobiquity.packer.Packer" target="com.mobiquity.repository.DataParserImplCustomized">
+      <point x="34.0" y="-29.0" />
+      <point x="621.7552058111385" y="1188.0" />
+      <point x="892.7367231638419" y="1188.0" />
+      <point x="892.7367231638419" y="1058.0" />
+      <point x="930.1500000000001" y="1058.0" />
+      <point x="-93.0" y="29.0" />
+    </edge>
+    <edge source="com.mobiquity.packer.Packer" target="com.mobiquity.packer.PackerService">
+      <point x="-34.0" y="-29.0" />
+      <point x="553.7552058111385" y="1188.0" />
+      <point x="462.8867231638419" y="1188.0" />
+      <point x="-43.25" y="29.0" />
+    </edge>
+    <edge source="com.mobiquity.repository.DataProviderImplFileReader" target="com.mobiquity.exception.ExceptionCodes">
+      <point x="147.5" y="-40.0" />
+      <point x="1240.7367231638418" y="1058.0" />
+      <point x="1205.2875" y="1058.0" />
+      <point x="1205.2875" y="143.0" />
+      <point x="1166.492080306699" y="143.0" />
+      <point x="109.28571428571422" y="51.5" />
+    </edge>
+    <edge source="com.mobiquity.packer.PackerService" target="com.mobiquity.service.ItemPicker">
+      <point x="-69.19999999999993" y="-29.0" />
+      <point x="436.936723163842" y="1058.0" />
+      <point x="386.1500000000001" y="1058.0" />
+      <point x="80.5" y="29.0" />
+    </edge>
+    <edge source="com.mobiquity.repository.DataProvider" target="com.mobiquity.domain.Pack">
+      <point x="0.0" y="-29.0" />
+      <point x="686.6500000000001" y="832.0" />
+      <point x="940.9367231638419" y="832.0" />
+      <point x="-45.39999999999998" y="106.5" />
+    </edge>
+    <edge source="com.mobiquity.domain.Pack" target="com.mobiquity.exception.ExceptionCodes">
+      <point x="85.125" y="-106.5" />
+      <point x="1071.461723163842" y="564.0" />
+      <point x="1110.099223163842" y="564.0" />
+      <point x="1110.099223163842" y="143.0" />
+      <point x="1093.6349374495562" y="143.0" />
+      <point x="36.42857142857139" y="51.5" />
+    </edge>
+    <edge source="com.mobiquity.service.ItemPickerImplDP" target="com.mobiquity.exception.APIException">
+      <point x="0.0" y="-29.0" />
+      <point x="161.0" y="1058.0" />
+      <point x="131.73672316384193" y="1058.0" />
+      <point x="131.73672316384193" y="306.0" />
+      <point x="931.2367231638419" y="306.0" />
+      <point x="-65.6" y="17.0" />
+    </edge>
+    <edge source="com.mobiquity.repository.DataProviderImplFileReader" target="com.mobiquity.repository.DataParserImplCustomized">
+      <point x="-88.5" y="-40.0" />
+      <point x="1004.7367231638419" y="1058.0" />
+      <point x="1023.1500000000001" y="1058.0" />
+      <point x="0.0" y="29.0" />
+    </edge>
+    <edge source="com.mobiquity.packer.Packer" target="com.mobiquity.repository.DataProviderImplFileReader">
+      <point x="68.0" y="-29.0" />
+      <point x="655.7552058111385" y="1198.0" />
+      <point x="1093.2367231638418" y="1198.0" />
+      <point x="0.0" y="40.0" />
+    </edge>
+    <edge source="com.mobiquity.exception.APIException" target="com.mobiquity.exception.ExceptionCodes">
+      <point x="41.0" y="-17.0" />
+      <point x="1037.836723163842" y="143.0" />
+      <point x="1057.206366020985" y="143.0" />
+      <point x="-5.6843418860808015E-14" y="51.5" />
+    </edge>
+    <edge source="com.mobiquity.packer.PackerService" target="com.mobiquity.domain.Pack">
+      <point x="34.60000000000002" y="-29.0" />
+      <point x="540.7367231638419" y="1048.0" />
+      <point x="499.1500000000001" y="1048.0" />
+      <point x="499.1500000000001" y="822.0" />
+      <point x="895.5367231638419" y="822.0" />
+      <point x="-90.80000000000001" y="106.5" />
+    </edge>
+    <edge source="com.mobiquity.domain.Item" target="com.mobiquity.config.ConfigProperties">
+      <point x="-75.0" y="-106.5" />
+      <point x="800.9218724778052" y="296.0" />
+      <point x="546.9867231638419" y="296.0" />
+      <point x="30.625" y="51.5" />
+    </edge>
+    <edge source="com.mobiquity.domain.Pack" target="com.mobiquity.domain.Item">
+      <point x="-85.125" y="-106.5" />
+      <point x="901.211723163842" y="564.0" />
+      <point x="875.9218724778052" y="564.0" />
+      <point x="0.0" y="106.5" />
+    </edge>
+    <edge source="com.mobiquity.repository.DataParserImplCustomized" target="com.mobiquity.exception.ExceptionCodes">
+      <point x="111.60000000000005" y="-29.0" />
+      <point x="1134.75" y="950.0" />
+      <point x="1160.0052058111387" y="950.0" />
+      <point x="1160.0052058111387" y="143.0" />
+      <point x="1130.0635088781278" y="143.0" />
+      <point x="72.85714285714283" y="51.5" />
+    </edge>
+    <edge source="com.mobiquity.repository.DataParserImplCustomized" target="com.mobiquity.domain.Pack">
+      <point x="0.0" y="-29.0" />
+      <point x="1023.1500000000001" y="930.0" />
+      <point x="1122.1408494753837" y="930.0" />
+      <point x="1122.1408494753837" y="832.0" />
+      <point x="1031.7367231638418" y="832.0" />
+      <point x="45.400000000000034" y="106.5" />
+    </edge>
+    <edge source="com.mobiquity.repository.DataProviderImplFileReader" target="com.mobiquity.domain.Pack">
+      <point x="29.5" y="-40.0" />
+      <point x="1122.7367231638418" y="1048.0" />
+      <point x="1183.2875" y="1048.0" />
+      <point x="1183.2875" y="822.0" />
+      <point x="1077.136723163842" y="822.0" />
+      <point x="90.80000000000007" y="106.5" />
+    </edge>
+    <edge source="com.mobiquity.domain.Item" target="com.mobiquity.exception.APIException">
+      <point x="75.0" y="-106.5" />
+      <point x="950.9218724778052" y="306.0" />
+      <point x="964.0367231638419" y="306.0" />
+      <point x="-32.80000000000001" y="17.0" />
+    </edge>
+    <edge source="com.mobiquity.packer.PackerService" target="com.mobiquity.config.ConfigProperties">
+      <point x="-34.60000000000002" y="-29.0" />
+      <point x="471.5367231638419" y="1058.0" />
+      <point x="477.1500000000001" y="1058.0" />
+      <point x="477.1500000000001" y="296.0" />
+      <point x="424.48672316384193" y="296.0" />
+      <point x="-91.875" y="51.5" />
+    </edge>
+    <edge source="com.mobiquity.packer.PackerService" target="com.mobiquity.repository.DataProvider">
+      <point x="69.20000000000005" y="-29.0" />
+      <point x="575.336723163842" y="1058.0" />
+      <point x="598.1500000000001" y="1058.0" />
+      <point x="-88.5" y="29.0" />
+    </edge>
+    <edge source="com.mobiquity.repository.DataParserImplCustomized" target="com.mobiquity.domain.Item">
+      <point x="-111.60000000000002" y="-29.0" />
+      <point x="911.5500000000001" y="950.0" />
+      <point x="840.8908494753837" y="950.0" />
+      <point x="840.8908494753837" y="564.0" />
+      <point x="809.2552058111385" y="564.0" />
+      <point x="-66.66666666666669" y="106.5" />
+    </edge>
+    <edge source="com.mobiquity.repository.DataParserImplCustomized" target="com.mobiquity.exception.APIException">
+      <point x="55.79999999999998" y="-29.0" />
+      <point x="1078.95" y="940.0" />
+      <point x="1149.0052058111387" y="940.0" />
+      <point x="1149.0052058111387" y="306.0" />
+      <point x="1029.636723163842" y="306.0" />
+      <point x="32.80000000000001" y="17.0" />
+    </edge>
+    <edge source="com.mobiquity.domain.Item" target="com.mobiquity.exception.ExceptionCodes">
+      <point x="25.0" y="-106.5" />
+      <point x="900.9218724778052" y="296.0" />
+      <point x="897.4325564971753" y="296.0" />
+      <point x="897.4325564971753" y="133.0" />
+      <point x="984.349223163842" y="133.0" />
+      <point x="-72.85714285714286" y="51.5" />
+    </edge>
+    <edge source="com.mobiquity.service.ItemPickerImplDP" target="com.mobiquity.exception.ExceptionCodes">
+      <point x="-107.33333333333326" y="-29.0" />
+      <point x="53.66666666666674" y="1058.0" />
+      <point x="99.66897699757851" y="1058.0" />
+      <point x="99.66897699757851" y="123.0" />
+      <point x="947.9206517352707" y="123.0" />
+      <point x="-109.28571428571428" y="51.5" />
+    </edge>
+    <edge source="com.mobiquity.service.ItemPickerImplDP" target="com.mobiquity.service.ItemPicker">
+      <point x="107.33333333333326" y="-29.0" />
+      <point x="268.33333333333326" y="1058.0" />
+      <point x="225.1500000000001" y="1058.0" />
+      <point x="-80.5" y="29.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="394.0" y="279.5" />
+  <SelectedNodes>
+    <node>com.mobiquity.service.ItemPicker</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+
