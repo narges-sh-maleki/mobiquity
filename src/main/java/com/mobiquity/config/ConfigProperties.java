@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Properties;
 
 @Slf4j
@@ -21,13 +22,12 @@ public class ConfigProperties {
         Integer numberPrecision;
         Integer coefficient;
         try {
-            String rootPath = ConfigProperties.class.getResource("/application.properties").getPath();
             Properties appProps = new Properties();
-            appProps.load(new FileInputStream(rootPath));
+            appProps.load(new FileInputStream(ConfigProperties.class.getResource("/application.properties").toURI().getPath()));
 
             numberPrecision = Integer.valueOf(appProps.getProperty("NumberPrecision", DEFAULT_NUMBER_PRECISION));
             coefficient = Integer.valueOf(appProps.getProperty("Coefficient", DEFAULT_COEFFICIENT));
-        } catch (IOException e) {
+        } catch (IOException | URISyntaxException e) {
             log.error("Exception reading properties file", e);
             numberPrecision = Integer.valueOf(DEFAULT_NUMBER_PRECISION);
             coefficient = Integer.valueOf(DEFAULT_COEFFICIENT);

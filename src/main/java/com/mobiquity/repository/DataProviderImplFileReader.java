@@ -10,6 +10,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
@@ -27,8 +29,8 @@ public class DataProviderImplFileReader implements DataProvider {
         this.dataParserImplCustomized = dataParserImplCustomized;
         try {
             this.reader = new BufferedReader
-                    (new InputStreamReader(new FileInputStream(filePath), StandardCharsets.UTF_8));
-        } catch (FileNotFoundException e) {
+                    (new InputStreamReader(new FileInputStream(new URI(filePath).getPath()), StandardCharsets.UTF_8));
+        } catch (FileNotFoundException | URISyntaxException e) {
             log.error("exception in reading from file", e);
             throw new APIException(ExceptionCodes.READ_FILE_EXP, e);
         }
