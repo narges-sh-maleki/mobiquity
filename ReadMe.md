@@ -12,11 +12,11 @@ This solution is meant to be used as a library (i.e. maven dependency), NOT as a
 ## How to run
 *1. Build the project using the below command:*
 
-    mvn clean install 
+    ./mvnw clean install 
 
 *2. How to run tests:*
 
-    mvn clean test
+    ./mvnw clean test
 
 *3. Use the library:*
  
