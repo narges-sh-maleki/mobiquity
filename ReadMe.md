@@ -24,7 +24,7 @@ use the below static method which returns a String as a result:
 
     com.mobiquity.packer.Packer.pack(String filePath) 
 
-##Design & Architecture:
+## Design & Architecture:
 
 The project is designed based on the OOP model trying to observe SOLID principles as much as possible. 
 Each class is designed to have a Single Responsibility to have almost only one reason to change it. 
@@ -36,35 +36,35 @@ Here you can see a perspective of the class diagram of project:
 ![TNT Aggregator Service](diagram.png)
 
 
-#####Configuration Properties:
+##### Configuration Properties:
 In order to decrease the complexity of Knapsack algorithm, the floating-point of weight parameters
 are considered fixed, and they are being ignore by multiplying to a fixed coefficient.
 These variables are being read from **application.properties** file.
 The library will use the caller project's properties file. Default values are set in case such file doesn't exist.
 
 
-####Domain Objects: </br>
+#### Domain Objects: </br>
 There are two main domain objects (POJOs) designed as immutable objects. 
 The validation checks for constrains are done in the constructor of the objects.
 
-####Repository Objects:</br>
+#### Repository Objects:</br>
 The DataProvider is used as an abstract to support different Data Sources such as file, DB and so on. 
 For now, the implementation is based on file data source , but there is possibility to have other implementations 
 to get data from other data sources.
 The same approach is used for DataParser and other classes. For now, it parses the data based on the 
 customized format, but it can change to JSON,CSV,...
 
-#####Core Algorithm:
+##### Core Algorithm:
 The Knapsack 0/1 with Dynamic Programming algorithm is used to implement ItemPicker interface.
 
-#####Packer Service:
+##### PackerService:
 This service plays the composition role to integrate DataProvider and ItemPicker(Knapsack Algorithm) modules.
 
-#####Packer:
+##### Packer:
 This class can be considered like initializer and loader of the whole context. The Injection 
 of the dependencies are done here.
 
-#####Testing:
+##### Testing:
 There are unit tests developed by Junit 5 and Mockito, and some Integration Tests.
 
 
