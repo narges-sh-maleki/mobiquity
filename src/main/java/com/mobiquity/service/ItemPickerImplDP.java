@@ -43,30 +43,30 @@ public  class ItemPickerImplDP implements ItemPicker {
         return itemsSelected;
     }
 
-    private List<Integer> getSelectedItems(int[] weight, int[][] DP, int sz) {
+    private List<Integer> getSelectedItems(int[] weight, int[][] DP, int capacity) {
         List<Integer> itemsSelected = new ArrayList<>();
         // checking the matrix to find selected items
-        //  if DP[i][sz] != DP[i-1][sz] then the item was included
+        //  if DP[i][capacity] != DP[i-1][capacity] then the item was included
         for (int i = weight.length; i > 0; i--) {
-            if (DP[i][sz] != DP[i - 1][sz]) {
+            if (DP[i][capacity] != DP[i - 1][capacity]) {
                 itemsSelected.add(i);
-                sz -= weight[i-1];
+                capacity -= weight[i-1];
             }
         }
         return itemsSelected;
     }
 
-    private void fillDpRow(Integer capacity, int itemWeight, int itemPrice, int[][] DP, int i) {
+    private void fillDpRow(Integer capacity, int itemWeight, int itemPrice, int[][] DP, int rowIndex) {
 
 
-        for (int sz = 1; sz <= capacity; sz++) {
+        for (int j = 1; j <= capacity; j++) {
 
             // excluding the item
-            DP[i][sz] = DP[i - 1][sz];
+            DP[rowIndex][j] = DP[rowIndex - 1][j];
 
             // Deciding to include or exclude the current item
-            if (sz >= itemWeight && DP[i - 1][sz - itemWeight] + itemPrice > DP[i][sz])
-                DP[i][sz] = DP[i - 1][sz - itemWeight] + itemPrice;
+            if (j >= itemWeight && DP[rowIndex - 1][j - itemWeight] + itemPrice > DP[rowIndex][j])
+                DP[rowIndex][j] = DP[rowIndex - 1][j - itemWeight] + itemPrice;
         }
     }
 }
